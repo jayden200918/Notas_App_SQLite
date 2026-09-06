@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,56 +7,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp"
+    android:padding="20dp"
+    android:background="@color/morado_claro"
     tools:context=".AgregarNotaACTIVITY">
 
-    <TextView
-        android:id="@+id/txtAgregarNota"
-        android:text="@string/txtAgregaNota"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/morado"
-        android:textSize="25dp"/>
-
-
-    <TextView
-        android:id="@+id/ivGuardarNota"
-        android:src= "@drawable/ic_check"
-        android:layout_alignTop="@+id/txtAgregarNota"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/TXTTITULO"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAgregarNota"
-        android:layout_marginTop="15dp"
-        android:padding="10dp">
-
-        <EditText
-            android:id="@+id/etTitulo"
-            android:hint="@string/etTitulo"
-            android:maxLines="1"
-            android:textSize="20sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-
-    </com.google.android.material.textfield.TextInputEditText>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TXTTITULO"
         android:layout_marginTop="10dp"
-        android:padding="10dp"/>
+        android:layout_marginBottom="20dp">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/txtAgregarNota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtAgregaNota"
+            android:textColor="@color/morado"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivGuardarNota"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/descGuardar"
+            android:src="@drawable/ic_check"
+            app:tint="@color/morado" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTitulo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/etTitulo"
+        app:boxStrokeColor="@color/morado"
+        app:hintTextColor="@color/morado">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDescripcion"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/etDescripcion"
+        app:boxStrokeColor="@color/morado"
+        app:hintTextColor="@color/morado">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="4"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

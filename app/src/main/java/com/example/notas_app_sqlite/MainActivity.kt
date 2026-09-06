@@ -1,8 +1,7 @@
 package com.example.notas_app_sqlite
 
-import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
         binding.FABAgregarNota.setOnClickListener {
-            Toast.makeText(applicationContext,"Has precionado en el FAB",
-                Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AgregarNotaACTIVITY::class.java)
+            startActivity(intent)
         }
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

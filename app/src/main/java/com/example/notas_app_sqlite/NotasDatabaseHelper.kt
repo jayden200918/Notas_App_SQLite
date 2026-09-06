@@ -1,10 +1,9 @@
 package com.example.notas_app_sqlite
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import androidx.activity.contextaware.ContextAwareHelper
-import org.junit.runner.manipulation.Ordering
 
 class NotasDatabaseHelper (context : Context) : SQLiteOpenHelper(
     context, DATABASE_NAME, null , DATABASE_VERSION
@@ -15,13 +14,19 @@ class NotasDatabaseHelper (context : Context) : SQLiteOpenHelper(
         db?.execSQL(createTableQuery)
     }
 
-    override fun onUpgrade(dp: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        val dropTableQuery =
-            "DROP TABLE IF EXISTS $TABLE_NAME"
-        dp?.execSQL(dropTableQuery)
-        val db = null
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        val dropTableQuery = "DROP TABLE IF EXISTS $TABLE_NAME"
+        db?.execSQL(dropTableQuery)
         onCreate(db)
-
+    }
+    fun insertNota(nota : Nota){
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_TITLE, nota.titulo)
+            put(COLUMN_DESCRIPTION, nota.descripcion)
+        }
+        db.insert(TABLE_NAME, null, values)
+        db.close()
     }
 
     companion object{
