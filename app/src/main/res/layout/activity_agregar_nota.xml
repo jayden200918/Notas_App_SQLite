@@ -68,7 +68,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etDescripcion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="58dp"
             android:gravity="top"
             android:inputType="textMultiLine|textCapSentences"
             android:minLines="4"
