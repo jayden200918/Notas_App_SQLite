@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var db: NotasDatabaseHelper
-    private lateinit var notasAdapter: NotasAdapter
+    private lateinit var notasAdaptador: NotasAdaptador
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db = NotasDatabaseHelper(this)
-        notasAdapter = NotasAdapter(db.getAllNotas())
+        notasAdaptador = NotasAdaptador(db.getAllNotas(), this)
 
         binding.notasRv.layoutManager = LinearLayoutManager(this)
-        binding.notasRv.adapter = notasAdapter
+        binding.notasRv.adapter = notasAdaptador
 
         binding.FABAgregarNota.setOnClickListener {
             val intent = Intent(this, AgregarNotaACTIVITY::class.java)
@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        notasAdapter.refreshData(db.getAllNotas())
+        notasAdaptador.refrescarLista(db.getAllNotas())
     }
 }
