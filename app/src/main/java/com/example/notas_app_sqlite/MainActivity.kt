@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db = NotasDatabaseHelper(this)
-        notasAdaptador = NotasAdaptador(db.getAllNotas())
+        notasAdaptador = NotasAdaptador(db.getAllNotas(), this)
 
         binding.notasRv.layoutManager = LinearLayoutManager(this)
         binding.notasRv.adapter = notasAdaptador

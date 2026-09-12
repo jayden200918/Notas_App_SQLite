@@ -12,10 +12,10 @@
     tools:context=".AgregarNotaACTIVITY">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:id="@+id/txtAgregarNota"
@@ -30,10 +30,10 @@
 
         <ImageView
             android:id="@+id/ivGuardarNota"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
+            android:layout_marginEnd="3dp"
             android:contentDescription="@string/descGuardar"
             android:src="@drawable/ic_check"
             app:tint="@color/morado" />
@@ -42,7 +42,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilTitulo"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/etTitulo"
@@ -51,28 +50,25 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTitulo"
-            android:layout_width="match_parent"
+            android:layout_width="331dp"
             android:layout_height="wrap_content"
-            android:inputType="textCapSentences"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilDescripcion"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="303dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="25dp"
         android:hint="@string/etDescripcion"
         app:boxStrokeColor="@color/morado"
         app:hintTextColor="@color/morado">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="319dp"
+            android:layout_height="match_parent"
             android:gravity="top"
-            android:inputType="textMultiLine|textCapSentences"
             android:minLines="4"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
