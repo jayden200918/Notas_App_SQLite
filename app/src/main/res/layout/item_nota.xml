@@ -47,7 +47,7 @@
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:contentDescription="Editar nota"
+            android:contentDescription="@string/descEditar"
             android:src="@drawable/ic_editar"
             app:tint="@color/morado" />
 

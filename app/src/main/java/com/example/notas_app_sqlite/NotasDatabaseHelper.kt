@@ -6,7 +6,10 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 class NotasDatabaseHelper(context: Context) : SQLiteOpenHelper(
-    context, DATABASE_NAME, null, DATABASE_VERSION
+    context,
+    DATABASE_NAME,
+    null,
+    DATABASE_VERSION,
 ) {
 
     companion object {

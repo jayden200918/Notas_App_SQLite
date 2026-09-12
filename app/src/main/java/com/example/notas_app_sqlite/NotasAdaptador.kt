@@ -1,6 +1,5 @@
 package com.example.notas_app_sqlite
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class NotasAdaptador(
-    private var notas: List<Nota>,
-    context: Context
+    private var notas: List<Nota>
 ) : RecyclerView.Adapter<NotasAdaptador.NotaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotaViewHolder {
